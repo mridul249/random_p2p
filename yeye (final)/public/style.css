@@ -1,0 +1,11 @@
+/* public/style.css */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+}
+
+#status {
+  margin-top: 20px;
+  color: green;
+}
