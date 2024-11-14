@@ -1,0 +1,64 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>P2P File Sharing</title>
+    <!-- Updated Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' http://10.35.13.164:5001; script-src 'self'; style-src 'self' 'unsafe-inline';">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .hidden { display: none; }
+        #filesList { width: 100%; height: 300px; }
+        #progressBar { width: 100%; }
+        #speedLabel { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>P2P File Sharing</h1>
+
+    <!-- Login Section -->
+    <div id="loginSection">
+        <h2>Login / Register</h2>
+        <label>Username:</label><br>
+        <input type="text" id="username"><br><br>
+        <label>Password:</label><br>
+        <input type="password" id="password"><br><br>
+        <button id="loginBtn">Login</button>
+        <button id="registerBtn">Sign Up</button>
+    </div>
+
+    <!-- Files Section -->
+    <div id="filesSection" class="hidden">
+        <h2>Shared Files</h2>
+
+        <!-- Search -->
+        <div>
+            <input type="text" id="searchFilename" placeholder="Search Filename">
+            <input type="text" id="searchUsername" placeholder="Search Username">
+            <button id="searchBtn">Search</button>
+            <button id="clearSearchBtn">Clear Search</button>
+        </div><br>
+
+        <!-- Toolbar -->
+        <div>
+            <button id="shareFileBtn">Share New File</button>
+            <button id="refreshFilesBtn">Refresh Files</button>
+            <button id="downloadFileBtn">Download</button>
+        </div><br>
+
+        <!-- Files List -->
+        <textarea id="filesList" readonly></textarea><br>
+
+        <!-- Progress Bar -->
+        <progress id="progressBar" value="0" max="100"></progress><br>
+
+        <!-- Status -->
+        <div id="statusLabel"></div>
+        <div id="speedLabel">Transfer Speed: 0 KB/s</div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
